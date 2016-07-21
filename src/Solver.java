@@ -5,8 +5,12 @@ public class Solver {
 	//load up numbers from input
 	public void input(Solver s){
 		//assumes puzzle input is correct
-		System.out.println("Please enter");
-	
+		int [][]inputArray= new int [9][9];
+		System.out.println("Example input:'1 2 3 4 5 0 8 0 6'");
+		for(byte i=1;i<=9;++i){
+		System.out.println("Please enter row"+i+" of 9:\n");
+		
+		}	
 	}
 	//output 
 	public Solver(){
