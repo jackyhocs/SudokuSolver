@@ -5,4 +5,8 @@ public class Puzzle extends SolutionSet{
 	public Puzzle(){
 		
 	}
+	
+	public void puzzleFill(int [][]arr){
+		
+	}
 }
