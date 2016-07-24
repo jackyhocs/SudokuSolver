@@ -30,7 +30,21 @@ public class Solver {
 	}
 	//output 
 	void readFile(String fileName) {
-		   
+		BufferedReader br;
+		Scanner scan;
+		try {
+			br = new BufferedReader(new FileReader(fileName));
+			scan = new Scanner(br);
+			for(byte i=0;i<9;++i){
+				for(byte j=0;j<9;++j){
+					System.out.println(scan.next());
+				}
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public static void main(String[] args) throws FileNotFoundException{
 		/*Puzzle p = new Puzzle();
