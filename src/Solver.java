@@ -1,62 +1,37 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Scanner;
-
 public class Solver {
-	private final int LINES=9;
-	private final int ARRAYLINES=8;
+	
 	//fits?
 	//recalculate priority
 	//load up numbers from input
-	public void input(Puzzle p) throws FileNotFoundException{
-		String mazePath = "src/text.txt";
-		int[][]inputArr=new int[ARRAYLINES][ARRAYLINES];
-		//assumes puzzle input is correct
-		BufferedReader br=new BufferedReader(new FileReader(mazePath));
-		Scanner scan = new Scanner(br);
-		for(byte r=0;r<9;++r){
-			for(byte c=0;c<9;++c){
-				inputArr[r][c]=scan.nextInt();
-			}
-		}
-		scan.close();
-		for(byte r=0;r<9;++r){
-			for(byte c=0;c<9;++c){
-				System.out.println(inputArr[r][c]);
-			}
-		}
-	}
 	//output 
-	void readFile(String fileName) {
-		BufferedReader br;
-		Scanner scan;
-		try {
-			br = new BufferedReader(new FileReader(fileName));
-			scan = new Scanner(br);
-			for(byte i=0;i<9;++i){
-				for(byte j=0;j<9;++j){
-					System.out.println(scan.next());
-				}
-			}
-			scan.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	public static void main(String[] args) throws FileNotFoundException{
-		/*Puzzle p = new Puzzle();
-		Solver s = new Solver();
-		s.input(p);*/
+	
+	public static void main(String[] args){
+		//Solver s = new Solver();
 		//make puzzle
 		//make 9 sub puzzles
 		//make 9 rows and 9 columns
-		Solver s = new Solver();
+		SolutionSet s = new SolutionSet();
 		String fileName="src/text.txt";
 		s.readFile(fileName);
 		
 	}
+	/*gameLoop(SolutionSet s) takes in a solutionset and then keeps on adding in new stuff until the solutionset is completed.
+	 * gameLoop: SolutionSet -> End of Program
+	 */
+	public void gameLoop(SolutionSet s){
+		boolean completed = s.getCompleted();
+		while(!completed){
+			
+		}
+		System.out.println("Completed");
+		//print out the shit
+		System.exit(0);
+	}
+	/*fits(SolutionSet s, int in) takes in a puzzle and checks if a certain number fits
+	 * returns an integer if it fits or not. 
+	 */
 	
+	/*checkNext()
+	 * 
+	 */
 }
