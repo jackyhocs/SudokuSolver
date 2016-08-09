@@ -34,4 +34,15 @@ public class Solver {
 	/*checkNext()
 	 * 
 	 */
+	
+	/*slotsLeft(SolutionPart sP) takes in a solution part and then returns the number of integers that need to be filled
+	 * numberLeft: SolutionPart -> Integer
+	 */
+	public int slotsLeft(SolutionPart sP){
+		int counter=0;
+		for(byte i=0;i<9;i++){
+			if(sP.getNumbers(i))counter++;
+		}
+		return counter;
+	}
 }
