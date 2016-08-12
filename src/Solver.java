@@ -45,4 +45,22 @@ public class Solver {
 		}
 		return counter;
 	}
+	
+	/*returnLastNumber(int []array) returns the value that needs to be filled in
+	 * returnLastNumber: array of Integers -> Integer
+	 */
+	public int returnLastNumber(int []array){
+		int retNum=45;
+		for(byte i=0;i<9;i++)
+			retNum-=array[i];
+		return retNum;
+	}
+	
+	public int howManyRemain(int []array){
+		int retNum=0;
+		for(byte i=0;i<9;i++){
+			if(array[i]==0)retNum++;
+		}
+		return retNum;
+	}
 }
