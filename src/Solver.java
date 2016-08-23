@@ -1,10 +1,10 @@
 public class Solver {
-	
+
 	//fits?
 	//recalculate priority
 	//load up numbers from input
 	//output 
-	
+
 	public static void main(String[] args){
 		//Solver s = new Solver();
 		//make puzzle
@@ -13,28 +13,40 @@ public class Solver {
 		SolutionSet s = new SolutionSet();
 		String fileName="src/text.txt";
 		s.readFile(fileName);
-		
-	}
-	/*gameLoop(SolutionSet s) takes in a solutionset and then keeps on adding in new stuff until the solutionset is completed.
-	 * gameLoop: SolutionSet -> End of Program
-	 */
-	public void gameLoop(SolutionSet s){
-		boolean completed = s.getCompleted();
-		while(!completed){
-			
-		}
-		System.out.println("Completed");
-		//print out the shit
-		System.exit(0);
+		/*
+		 * Initialize 2D array with 81 empty grids (nx = 9, ny = 9)
+ Fill in some empty grid with the known values
+ Make an original copy of the array
+ Start from top left grid (nx = 0, ny = 0), check if grid is empty
+ if (grid is empty) {
+   assign the empty grid with values (i)
+   if (no numbers exists in same rows & same columns same as (i) & 3x3 square (i) is currently in)
+     fill in the number
+   if (numbers exists in same rows & same columns same as (i) & 3x3 square (i) is currently in)
+     discard (i) and repick other values (i++)
+ }
+ else {
+   while (nx < 9) {
+     Proceed to next row grid(nx++, ny)
+     if (nx equals 9) {
+       reset nx = 1
+       proceed to next column grid(nx,ny++)
+       if (ny equals 9) {
+         print solution
+       }
+     }
+   }
+ }
+		 */
 	}
 	/*fits(SolutionSet s, int in) takes in a puzzle and checks if a certain number fits
 	 * returns an integer if it fits or not. 
 	 */
-	
+
 	/*checkNext()
 	 * 
 	 */
-	
+
 	/*slotsLeft(SolutionPart sP) takes in a solution part and then returns the number of integers that need to be filled
 	 * numberLeft: SolutionPart -> Integer
 	 */
@@ -45,7 +57,7 @@ public class Solver {
 		}
 		return counter;
 	}
-	
+
 	/*returnLastNumber(int []array) returns the value that needs to be filled in
 	 * returnLastNumber: array of Integers -> Integer
 	 */
@@ -55,7 +67,7 @@ public class Solver {
 			retNum-=array[i];
 		return retNum;
 	}
-	
+
 	public int howManyRemain(int []array){
 		int retNum=0;
 		for(byte i=0;i<9;i++){
